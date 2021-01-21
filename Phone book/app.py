@@ -231,7 +231,7 @@ class GUI(Tk):
         self.frame = Frame(self,bg = "white")
         self.frame.place(relx = 0,rely = 0,relwidth = 1,relheight = 1)
         
-        self.search_image = Image.open("search.png")
+        self.search_image = Image.open("images\\search.png")
         self.search_image = ImageTk.PhotoImage(self.search_image)
         if purpose is None:
             self.search_button = Button(self.frame,image = self.search_image,command = self.show_filtered_results)
@@ -343,8 +343,11 @@ class GUI(Tk):
 
     
 if __name__ == "__main__":
+    print("Running Tests for the app !!")
+    Contact.create_database()
+    sleep(2)
+    print("Test Successful")
+    print("Running App Now :)")
     window = GUI()
-    
     window.first_view()
-
     window.mainloop()
